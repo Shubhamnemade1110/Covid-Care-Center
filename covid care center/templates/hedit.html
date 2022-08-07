@@ -1,0 +1,68 @@
+{% extends 'navbar.html' %}
+{% block title %}Update Hospital Information{% endblock title %}
+
+{% block body %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container mt-4">
+    <div class="display-4 text-center text-primary">Update Hospital Data</div>
+    <br>
+    <div class="row">
+        
+        <div class="col-md-4">
+        
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                {% include 'message.html' %}
+                <h4 class="text-center text-info">Covid Care Center</h4>
+                <div class="card body p-3 bg-light" >
+                    <form action="/hedit/{{hcode}}" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control mt-2" name="hcode" value={{hcode}} placeholder="Enter hospital code" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control mt-2 " name="hname" value={{hname}} placeholder="Enter Hospital Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control mt-2" name="beds" value={{beds}} placeholder="Normal Beds Available" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control mt-2" name="icubeds" value={{icubeds}} placeholder="I.C.U. Beds Available" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control mt-2" name="hicubeds" value={{hicubeds}}placeholder="H.I.C.U. Beds Available" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control mt-2" name="vent" value={{ventilators}} placeholder="Ventilators Beds Available" required>
+                        </div>
+
+                        <br>
+                        <button class="btn btn-info" type="submit">Update</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+        
+        </div>
+
+    
+    </div>
+</div>
+
+
+{% endblock body %}
+
